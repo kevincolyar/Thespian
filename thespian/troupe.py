@@ -93,7 +93,7 @@ class _TroupeManager(object):
            len(self._troupers) > self.idle_count:
             self._troupers.remove(troupe_member)
             return [(troupe_member, ActorExitRequest())]
-        self._idle_troupers.append(troupe_member)
+        self._idle_troupers.insert(0, troupe_member)
         return []
 
     def new_work(self, msg, sender):
